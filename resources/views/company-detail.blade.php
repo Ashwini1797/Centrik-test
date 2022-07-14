@@ -83,7 +83,7 @@
                                         <div class="form-group">
                                             <label for="inputFName">First Name<span style="color:red"> *</span> :</label>
                                             <input type="text" class="form-control" name="employee_first_name"
-                                                   placeholder="Enter First Name">
+                                                   placeholder="Enter First Name" value="{{old('employee_first_name')}}" >
                                             @if ($errors->has('employee_first_name'))
                                                 <span class="text-danger">{{ $errors->first('employee_first_name') }}</span>
                                             @endif
@@ -94,7 +94,7 @@
                                         <div class="form-group">
                                             <label for="inputLName">Last Name<span style="color:red"> *</span> :</label>
                                             <input type="text" class="form-control" name="employee_last_name"
-                                                   id="inputLName" placeholder="Enter Last Name">
+                                                   id="inputLName" placeholder="Enter Last Name" value="{{old('employee_last_name')}}">
                                             @if ($errors->has('employee_last_name'))
                                                 <span class="text-danger">{{ $errors->first('employee_last_name') }}</span>
                                             @endif
@@ -102,7 +102,7 @@
 
                                         <div class="form-group">
                                             <label for="inputEmail">Email<span style="color:red"> *</span> :</label>
-                                            <input type="email" class="form-control" name="employee_email" id="inputEmail" placeholder="Enter Email">
+                                            <input type="email" class="form-control" name="employee_email" id="inputEmail" placeholder="Enter Email" value="{{old('employee_email')}}">
                                             @if ($errors->has('employee_email'))
                                                 <span class="text-danger">{{ $errors->first('employee_email') }}</span>
                                             @endif
@@ -110,9 +110,9 @@
 
                                         <div class="form-group">
                                             <label for="inputPhone">Phone<span style="color:red"> *</span> :</label>
-                                            <input type="text" class="form-control" name="employee_phone" min="10"
+                                            <input type="text" class="form-control" name="employee_phone"
                                                    max="10"
-                                                   id="inputPhone" placeholder="Enter Phone">
+                                                   id="inputPhone" placeholder="Enter Phone" value="{{old('employee_phone')}}" >
                                             @if ($errors->has('employee_phone'))
 
                                                 <span class="text-danger">{{ $errors->first('employee_phone') }}</span>

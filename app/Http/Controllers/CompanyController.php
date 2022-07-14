@@ -160,15 +160,15 @@ class CompanyController extends Controller
     public function destroy($id)
     {
         try{
-
             $companyDetails = Company::find($id);
 
             if(!$companyDetails){
                 return redirect('/company-list')->with('error', 'Company Not Found');
             }
             $companyDetails->updated_by = Auth::id();
+            $companyDetails->employees()->delete();
             $companyDetails->delete();
-            return redirect('/company-list')->with('success', 'Company deleted sucessfully.');
+            return redirect('/company-list')->with('success', 'Sucessfully Company deleted with its existing employees.');
 
         }catch(\Exception $e){
             logger($e);
